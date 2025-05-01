@@ -16,7 +16,21 @@ module mips_cpu_tb;
         clk = 0;
         forever #5 clk = ~clk;
     end
+
+    initial begin
+        $dumpfile("cpu_trace.vcd");
+        $dumpvars(0, mips_cpu_tb);
+        
+        // 设置自动监控
+        $monitor("时间=%0t: PC=%h, 指令=%h, ALU=%h", 
+                 $time, cpu.pc, cpu.instruction, cpu.alu_result);
+    end
     
+    // 敏感信号监控
+    always @(cpu.reg_write_en) begin
+        if (cpu.reg_write_en)
+            $display("寄存器写入使能激活: 写入r%d, 值=%h", cpu.write_reg, cpu.reg_write_data);
+    end
     // 正确的reset处理
     initial begin
         // 初始化所有寄存器和内存的"previous"值

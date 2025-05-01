@@ -1,12 +1,16 @@
 Vivado Simulator 2018.3
 Time resolution is 1 ps
+ ±º‰=0: PC=00000000, ÷∏¡Ó=xxxxxxxx, ALU=xxxxxxxx
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 0, ÷µ=xxxxxxxx
+ ±º‰=5000: PC=00000000, ÷∏¡Ó=00000000, ALU=00000000
+ ±º‰=20000: PC=00000004, ÷∏¡Ó=00000000, ALU=00000000
 
 ==== ÷‹∆⁄ 1 ====
-PC = 00000004, ÷∏¡Ó = 00432020
-øÿ÷∆–≈∫≈: opcode=000000, funct=100000
+PC = 00000004, ÷∏¡Ó = 00000000
+øÿ÷∆–≈∫≈: opcode=000000, funct=000000
 reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
-alu_control=0010, branch=0, jump=0
-R–Õ÷∏¡Ó:       ADD
+alu_control=0000, branch=0, jump=0
+R–Õ÷∏¡Ó:   Œ¥÷™R–Õ
 ºƒ¥Ê∆˜±‰ªØ:
   r1: 00000000 -> 00000004
   r2: 00000000 -> 00000008
@@ -103,20 +107,24 @@ R–Õ÷∏¡Ó:       ADD
   mem[61]: 00000000 -> 000000f4
   mem[62]: 00000000 -> 000000f8
   mem[63]: 00000000 -> 000000fc
-ALU: a=00000008, b=0000000c, result=00000014, zero=0
+ALU: a=00000000, b=00000000, result=00000000, zero=1
 Next PC = 00000008
+ ±º‰=25000: PC=00000004, ÷∏¡Ó=00432020, ALU=00000014
+ ±º‰=30000: PC=00000008, ÷∏¡Ó=00432020, ALU=00000014
 
 ==== ÷‹∆⁄ 2 ====
-PC = 00000008, ÷∏¡Ó = 8c440004
-øÿ÷∆–≈∫≈: opcode=100011, funct=000100
-reg_dst=00, alu_src=1, mem_to_reg=01, reg_write=1, mem_write=0
+PC = 00000008, ÷∏¡Ó = 00432020
+øÿ÷∆–≈∫≈: opcode=000000, funct=100000
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
 alu_control=0010, branch=0, jump=0
-÷∏¡Ó: LW r4, 4(r2)
+R–Õ÷∏¡Ó:       ADD
 ºƒ¥Ê∆˜±‰ªØ:
-  r4: 00000010 -> 0000000c
+  r4: 00000010 -> 00000014
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=00000008, b=00000004, result=0000000c, zero=0
+ALU: a=00000008, b=0000000c, result=00000014, zero=0
 Next PC = 0000000c
+ ±º‰=35000: PC=00000008, ÷∏¡Ó=8c440004, ALU=0000000c
+ ±º‰=40000: PC=0000000c, ÷∏¡Ó=8c440004, ALU=0000000c
 
 ==== ÷‹∆⁄ 3 ====
 PC = 0000000c, ÷∏¡Ó = 8c440004
@@ -128,18 +136,23 @@ alu_control=0010, branch=0, jump=0
 ƒ⁄¥Ê±‰ªØ:
 ALU: a=00000008, b=00000004, result=0000000c, zero=0
 Next PC = 00000010
+ ±º‰=45000: PC=0000000c, ÷∏¡Ó=ac450008, ALU=00000010
+ ±º‰=50000: PC=00000010, ÷∏¡Ó=ac450008, ALU=00000010
 
 ==== ÷‹∆⁄ 4 ====
-PC = 00000010, ÷∏¡Ó = 00831022
-øÿ÷∆–≈∫≈: opcode=000000, funct=100010
-reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
-alu_control=0110, branch=0, jump=0
-R–Õ÷∏¡Ó:       SUB
+PC = 00000010, ÷∏¡Ó = ac450008
+øÿ÷∆–≈∫≈: opcode=101011, funct=001000
+reg_dst=00, alu_src=1, mem_to_reg=00, reg_write=0, mem_write=1
+alu_control=0010, branch=0, jump=0
+÷∏¡Ó: SW r5, 8(r2)
 ºƒ¥Ê∆˜±‰ªØ:
-  r2: 00000008 -> 00000000
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=0000000c, result=00000000, zero=1
+  mem[4]: 00000010 -> 00000014
+ALU: a=00000008, b=00000008, result=00000010, zero=0
 Next PC = 00000014
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 2, ÷µ=00000010
+ ±º‰=55000: PC=00000010, ÷∏¡Ó=00831022, ALU=00000008
+ ±º‰=60000: PC=00000014, ÷∏¡Ó=00831022, ALU=00000008
 
 ==== ÷‹∆⁄ 5 ====
 PC = 00000014, ÷∏¡Ó = 00831022
@@ -149,20 +162,24 @@ alu_control=0110, branch=0, jump=0
 R–Õ÷∏¡Ó:       SUB
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=0000000c, result=00000000, zero=1
+ALU: a=00000014, b=0000000c, result=00000008, zero=0
 Next PC = 00000018
+ ±º‰=65000: PC=00000014, ÷∏¡Ó=00831025, ALU=0000001c
+ ±º‰=70000: PC=00000018, ÷∏¡Ó=00831025, ALU=0000001c
 
 ==== ÷‹∆⁄ 6 ====
-PC = 00000018, ÷∏¡Ó = 00831024
-øÿ÷∆–≈∫≈: opcode=000000, funct=100100
+PC = 00000018, ÷∏¡Ó = 00831025
+øÿ÷∆–≈∫≈: opcode=000000, funct=100101
 reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
-alu_control=0000, branch=0, jump=0
-R–Õ÷∏¡Ó:       AND
+alu_control=0001, branch=0, jump=0
+R–Õ÷∏¡Ó:        OR
 ºƒ¥Ê∆˜±‰ªØ:
-  r2: 00000000 -> 0000000c
+  r2: 00000008 -> 0000001c
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=0000000c, result=0000000c, zero=0
+ALU: a=00000014, b=0000000c, result=0000001c, zero=0
 Next PC = 0000001c
+ ±º‰=75000: PC=00000018, ÷∏¡Ó=00831024, ALU=00000004
+ ±º‰=80000: PC=0000001c, ÷∏¡Ó=00831024, ALU=00000004
 
 ==== ÷‹∆⁄ 7 ====
 PC = 0000001c, ÷∏¡Ó = 00831024
@@ -172,22 +189,27 @@ alu_control=0000, branch=0, jump=0
 R–Õ÷∏¡Ó:       AND
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=0000000c, result=0000000c, zero=0
+ALU: a=00000014, b=0000000c, result=00000004, zero=0
 Next PC = 00000020
+ ±º‰=85000: PC=0000001c, ÷∏¡Ó=0083102a, ALU=00000000
+ ±º‰=90000: PC=00000020, ÷∏¡Ó=0083102a, ALU=00000000
 
 ==== ÷‹∆⁄ 8 ====
-PC = 00000024, ÷∏¡Ó = 10630001
-øÿ÷∆–≈∫≈: opcode=000100, funct=000001
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0110, branch=1, jump=0
-÷∏¡Ó: BEQ r3, r3, 1
+PC = 00000020, ÷∏¡Ó = 0083102a
+øÿ÷∆–≈∫≈: opcode=000000, funct=101010
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0111, branch=0, jump=0
+R–Õ÷∏¡Ó:       SLT
 ºƒ¥Ê∆˜±‰ªØ:
+  r2: 0000001c -> 00000000
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=0000000c, result=00000000, zero=1
-Next PC = 0000002c
+ALU: a=00000014, b=0000000c, result=00000000, zero=1
+Next PC = 00000024
+ ±º‰=95000: PC=00000020, ÷∏¡Ó=10630001, ALU=00000000
+ ±º‰=100000: PC=00000028, ÷∏¡Ó=10630001, ALU=00000000
 
 ==== ÷‹∆⁄ 9 ====
-PC = 0000002c, ÷∏¡Ó = 10630001
+PC = 00000028, ÷∏¡Ó = 10630001
 øÿ÷∆–≈∫≈: opcode=000100, funct=000001
 reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
 alu_control=0110, branch=1, jump=0
@@ -195,18 +217,22 @@ alu_control=0110, branch=1, jump=0
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
 ALU: a=0000000c, b=0000000c, result=00000000, zero=1
-Next PC = 00000034
+Next PC = 00000030
+ ±º‰=105000: PC=00000028, ÷∏¡Ó=10640001, ALU=fffffff8
+ ±º‰=110000: PC=00000030, ÷∏¡Ó=10640001, ALU=fffffff8
 
 ==== ÷‹∆⁄ 10 ====
-PC = 00000000, ÷∏¡Ó = 08000000
-øÿ÷∆–≈∫≈: opcode=000010, funct=000000
+PC = 00000030, ÷∏¡Ó = 10640001
+øÿ÷∆–≈∫≈: opcode=000100, funct=000001
 reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=1
-÷∏¡Ó: J 00000000
+alu_control=0110, branch=1, jump=0
+÷∏¡Ó: BEQ r3, r4, 1
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=00000000, b=00000000, result=00000000, zero=1
-Next PC = 00000000
+ALU: a=0000000c, b=00000014, result=fffffff8, zero=0
+Next PC = 00000038
+ ±º‰=115000: PC=00000030, ÷∏¡Ó=08000000, ALU=00000000
+ ±º‰=120000: PC=00000000, ÷∏¡Ó=08000000, ALU=00000000
 
 ==== ÷‹∆⁄ 11 ====
 PC = 00000000, ÷∏¡Ó = 08000000
@@ -218,18 +244,22 @@ alu_control=0000, branch=0, jump=1
 ƒ⁄¥Ê±‰ªØ:
 ALU: a=00000000, b=00000000, result=00000000, zero=1
 Next PC = 00000000
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 0, ÷µ=00000000
+ ±º‰=125000: PC=00000000, ÷∏¡Ó=00000000, ALU=00000000
+ ±º‰=130000: PC=00000004, ÷∏¡Ó=00000000, ALU=00000000
 
 ==== ÷‹∆⁄ 12 ====
-PC = 00000004, ÷∏¡Ó = 00432020
-øÿ÷∆–≈∫≈: opcode=000000, funct=100000
+PC = 00000004, ÷∏¡Ó = 00000000
+øÿ÷∆–≈∫≈: opcode=000000, funct=000000
 reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
-alu_control=0010, branch=0, jump=0
-R–Õ÷∏¡Ó:       ADD
+alu_control=0000, branch=0, jump=0
+R–Õ÷∏¡Ó:   Œ¥÷™R–Õ
 ºƒ¥Ê∆˜±‰ªØ:
-  r4: 0000000c -> 00000018
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=0000000c, result=00000018, zero=0
+ALU: a=00000000, b=00000000, result=00000000, zero=1
 Next PC = 00000008
+ ±º‰=135000: PC=00000004, ÷∏¡Ó=00432020, ALU=0000000c
+ ±º‰=140000: PC=00000008, ÷∏¡Ó=00432020, ALU=0000000c
 
 ==== ÷‹∆⁄ 13 ====
 PC = 00000008, ÷∏¡Ó = 00432020
@@ -239,19 +269,24 @@ alu_control=0010, branch=0, jump=0
 R–Õ÷∏¡Ó:       ADD
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=0000000c, result=00000018, zero=0
+ALU: a=00000000, b=0000000c, result=0000000c, zero=0
 Next PC = 0000000c
+ ±º‰=145000: PC=00000008, ÷∏¡Ó=8c440004, ALU=00000004
+ ±º‰=150000: PC=0000000c, ÷∏¡Ó=8c440004, ALU=00000004
 
 ==== ÷‹∆⁄ 14 ====
-PC = 0000000c, ÷∏¡Ó = ac450008
-øÿ÷∆–≈∫≈: opcode=101011, funct=001000
-reg_dst=00, alu_src=1, mem_to_reg=00, reg_write=0, mem_write=1
+PC = 0000000c, ÷∏¡Ó = 8c440004
+øÿ÷∆–≈∫≈: opcode=100011, funct=000100
+reg_dst=00, alu_src=1, mem_to_reg=01, reg_write=1, mem_write=0
 alu_control=0010, branch=0, jump=0
-÷∏¡Ó: SW r5, 8(r2)
+÷∏¡Ó: LW r4, 4(r2)
 ºƒ¥Ê∆˜±‰ªØ:
+  r4: 00000014 -> 00000004
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=00000008, result=00000014, zero=0
+ALU: a=00000000, b=00000004, result=00000004, zero=0
 Next PC = 00000010
+ ±º‰=155000: PC=0000000c, ÷∏¡Ó=ac450008, ALU=00000008
+ ±º‰=160000: PC=00000010, ÷∏¡Ó=ac450008, ALU=00000008
 
 ==== ÷‹∆⁄ 15 ====
 PC = 00000010, ÷∏¡Ó = ac450008
@@ -261,20 +296,25 @@ alu_control=0010, branch=0, jump=0
 ÷∏¡Ó: SW r5, 8(r2)
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=00000008, result=00000014, zero=0
+ALU: a=00000000, b=00000008, result=00000008, zero=0
 Next PC = 00000014
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 2, ÷µ=00000008
+ ±º‰=165000: PC=00000010, ÷∏¡Ó=00831022, ALU=fffffff8
+ ±º‰=170000: PC=00000014, ÷∏¡Ó=00831022, ALU=fffffff8
 
 ==== ÷‹∆⁄ 16 ====
-PC = 00000014, ÷∏¡Ó = 00831025
-øÿ÷∆–≈∫≈: opcode=000000, funct=100101
+PC = 00000014, ÷∏¡Ó = 00831022
+øÿ÷∆–≈∫≈: opcode=000000, funct=100010
 reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
-alu_control=0001, branch=0, jump=0
-R–Õ÷∏¡Ó:        OR
+alu_control=0110, branch=0, jump=0
+R–Õ÷∏¡Ó:       SUB
 ºƒ¥Ê∆˜±‰ªØ:
-  r2: 0000000c -> 0000001c
+  r2: 00000000 -> fffffff8
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=00000018, b=0000000c, result=0000001c, zero=0
+ALU: a=00000004, b=0000000c, result=fffffff8, zero=0
 Next PC = 00000018
+ ±º‰=175000: PC=00000014, ÷∏¡Ó=00831025, ALU=0000000c
+ ±º‰=180000: PC=00000018, ÷∏¡Ó=00831025, ALU=0000000c
 
 ==== ÷‹∆⁄ 17 ====
 PC = 00000018, ÷∏¡Ó = 00831025
@@ -284,20 +324,24 @@ alu_control=0001, branch=0, jump=0
 R–Õ÷∏¡Ó:        OR
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=00000018, b=0000000c, result=0000001c, zero=0
+ALU: a=00000004, b=0000000c, result=0000000c, zero=0
 Next PC = 0000001c
+ ±º‰=185000: PC=00000018, ÷∏¡Ó=00831024, ALU=00000004
+ ±º‰=190000: PC=0000001c, ÷∏¡Ó=00831024, ALU=00000004
 
 ==== ÷‹∆⁄ 18 ====
-PC = 0000001c, ÷∏¡Ó = 0083102a
-øÿ÷∆–≈∫≈: opcode=000000, funct=101010
+PC = 0000001c, ÷∏¡Ó = 00831024
+øÿ÷∆–≈∫≈: opcode=000000, funct=100100
 reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
-alu_control=0111, branch=0, jump=0
-R–Õ÷∏¡Ó:       SLT
+alu_control=0000, branch=0, jump=0
+R–Õ÷∏¡Ó:       AND
 ºƒ¥Ê∆˜±‰ªØ:
-  r2: 0000001c -> 00000000
+  r2: fffffff8 -> 00000004
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=00000018, b=0000000c, result=00000000, zero=1
+ALU: a=00000004, b=0000000c, result=00000004, zero=0
 Next PC = 00000020
+ ±º‰=195000: PC=0000001c, ÷∏¡Ó=0083102a, ALU=00000001
+ ±º‰=200000: PC=00000020, ÷∏¡Ó=0083102a, ALU=00000001
 
 ==== ÷‹∆⁄ 19 ====
 PC = 00000020, ÷∏¡Ó = 0083102a
@@ -307,291 +351,307 @@ alu_control=0111, branch=0, jump=0
 R–Õ÷∏¡Ó:       SLT
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=00000018, b=0000000c, result=00000000, zero=1
+ALU: a=00000004, b=0000000c, result=00000001, zero=0
 Next PC = 00000024
+ ±º‰=205000: PC=00000020, ÷∏¡Ó=10630001, ALU=00000000
+ ±º‰=210000: PC=00000028, ÷∏¡Ó=10630001, ALU=00000000
 
 ==== ÷‹∆⁄ 20 ====
-PC = 00000024, ÷∏¡Ó = 8c620000
-øÿ÷∆–≈∫≈: opcode=100011, funct=000000
-reg_dst=00, alu_src=1, mem_to_reg=01, reg_write=1, mem_write=0
-alu_control=0010, branch=0, jump=0
-÷∏¡Ó: LW r2, 0(r3)
+PC = 00000028, ÷∏¡Ó = 10630001
+øÿ÷∆–≈∫≈: opcode=000100, funct=000001
+reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
+alu_control=0110, branch=1, jump=0
+÷∏¡Ó: BEQ r3, r3, 1
 ºƒ¥Ê∆˜±‰ªØ:
-  r2: 00000000 -> 0000000c
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=00000000, result=0000000c, zero=0
-Next PC = 00000028
+ALU: a=0000000c, b=0000000c, result=00000000, zero=1
+Next PC = 00000030
+ ±º‰=215000: PC=00000028, ÷∏¡Ó=10640001, ALU=00000008
+ ±º‰=220000: PC=00000030, ÷∏¡Ó=10640001, ALU=00000008
 
 ==== ÷‹∆⁄ 21 ====
-PC = 00000028, ÷∏¡Ó = 8c620000
-øÿ÷∆–≈∫≈: opcode=100011, funct=000000
-reg_dst=00, alu_src=1, mem_to_reg=01, reg_write=1, mem_write=0
-alu_control=0010, branch=0, jump=0
-÷∏¡Ó: LW r2, 0(r3)
+PC = 00000030, ÷∏¡Ó = 10640001
+øÿ÷∆–≈∫≈: opcode=000100, funct=000001
+reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
+alu_control=0110, branch=1, jump=0
+÷∏¡Ó: BEQ r3, r4, 1
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=00000000, result=0000000c, zero=0
-Next PC = 0000002c
+ALU: a=0000000c, b=00000004, result=00000008, zero=0
+Next PC = 00000038
+ ±º‰=225000: PC=00000030, ÷∏¡Ó=08000000, ALU=00000000
+ ±º‰=230000: PC=00000000, ÷∏¡Ó=08000000, ALU=00000000
 
 ==== ÷‹∆⁄ 22 ====
-PC = 0000002c, ÷∏¡Ó = ac620000
-øÿ÷∆–≈∫≈: opcode=101011, funct=000000
-reg_dst=00, alu_src=1, mem_to_reg=00, reg_write=0, mem_write=1
-alu_control=0010, branch=0, jump=0
-÷∏¡Ó: SW r2, 0(r3)
+PC = 00000000, ÷∏¡Ó = 08000000
+øÿ÷∆–≈∫≈: opcode=000010, funct=000000
+reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
+alu_control=0000, branch=0, jump=1
+÷∏¡Ó: J 00000000
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=00000000, result=0000000c, zero=0
-Next PC = 00000030
+ALU: a=00000000, b=00000000, result=00000000, zero=1
+Next PC = 00000000
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 0, ÷µ=00000000
+ ±º‰=235000: PC=00000000, ÷∏¡Ó=00000000, ALU=00000000
+ ±º‰=240000: PC=00000004, ÷∏¡Ó=00000000, ALU=00000000
 
 ==== ÷‹∆⁄ 23 ====
-PC = 00000030, ÷∏¡Ó = ac620000
-øÿ÷∆–≈∫≈: opcode=101011, funct=000000
-reg_dst=00, alu_src=1, mem_to_reg=00, reg_write=0, mem_write=1
-alu_control=0010, branch=0, jump=0
-÷∏¡Ó: SW r2, 0(r3)
+PC = 00000004, ÷∏¡Ó = 00000000
+øÿ÷∆–≈∫≈: opcode=000000, funct=000000
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0000, branch=0, jump=0
+R–Õ÷∏¡Ó:   Œ¥÷™R–Õ
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=0000000c, b=00000000, result=0000000c, zero=0
-Next PC = 00000034
+ALU: a=00000000, b=00000000, result=00000000, zero=1
+Next PC = 00000008
+ ±º‰=245000: PC=00000004, ÷∏¡Ó=00432020, ALU=00000010
+ ±º‰=250000: PC=00000008, ÷∏¡Ó=00432020, ALU=00000010
 
 ==== ÷‹∆⁄ 24 ====
-PC = 00000034, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000008, ÷∏¡Ó = 00432020
+øÿ÷∆–≈∫≈: opcode=000000, funct=100000
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0010, branch=0, jump=0
+R–Õ÷∏¡Ó:       ADD
 ºƒ¥Ê∆˜±‰ªØ:
+  r4: 00000004 -> 00000010
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000038
+ALU: a=00000004, b=0000000c, result=00000010, zero=0
+Next PC = 0000000c
+ ±º‰=255000: PC=00000008, ÷∏¡Ó=8c440004, ALU=00000008
+ ±º‰=260000: PC=0000000c, ÷∏¡Ó=8c440004, ALU=00000008
 
 ==== ÷‹∆⁄ 25 ====
-PC = 00000038, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 0000000c, ÷∏¡Ó = 8c440004
+øÿ÷∆–≈∫≈: opcode=100011, funct=000100
+reg_dst=00, alu_src=1, mem_to_reg=01, reg_write=1, mem_write=0
+alu_control=0010, branch=0, jump=0
+÷∏¡Ó: LW r4, 4(r2)
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 0000003c
+ALU: a=00000004, b=00000004, result=00000008, zero=0
+Next PC = 00000010
+ ±º‰=265000: PC=0000000c, ÷∏¡Ó=ac450008, ALU=0000000c
+ ±º‰=270000: PC=00000010, ÷∏¡Ó=ac450008, ALU=0000000c
 
 ==== ÷‹∆⁄ 26 ====
-PC = 0000003c, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000010, ÷∏¡Ó = ac450008
+øÿ÷∆–≈∫≈: opcode=101011, funct=001000
+reg_dst=00, alu_src=1, mem_to_reg=00, reg_write=0, mem_write=1
+alu_control=0010, branch=0, jump=0
+÷∏¡Ó: SW r5, 8(r2)
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000040
+  mem[3]: 0000000c -> 00000014
+ALU: a=00000004, b=00000008, result=0000000c, zero=0
+Next PC = 00000014
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 2, ÷µ=0000000c
+ ±º‰=275000: PC=00000010, ÷∏¡Ó=00831022, ALU=00000004
+ ±º‰=280000: PC=00000014, ÷∏¡Ó=00831022, ALU=00000004
 
 ==== ÷‹∆⁄ 27 ====
-PC = 00000040, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000014, ÷∏¡Ó = 00831022
+øÿ÷∆–≈∫≈: opcode=000000, funct=100010
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0110, branch=0, jump=0
+R–Õ÷∏¡Ó:       SUB
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000044
+ALU: a=00000010, b=0000000c, result=00000004, zero=0
+Next PC = 00000018
+ ±º‰=285000: PC=00000014, ÷∏¡Ó=00831025, ALU=0000001c
+ ±º‰=290000: PC=00000018, ÷∏¡Ó=00831025, ALU=0000001c
 
 ==== ÷‹∆⁄ 28 ====
-PC = 00000044, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000018, ÷∏¡Ó = 00831025
+øÿ÷∆–≈∫≈: opcode=000000, funct=100101
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0001, branch=0, jump=0
+R–Õ÷∏¡Ó:        OR
 ºƒ¥Ê∆˜±‰ªØ:
+  r2: 00000004 -> 0000001c
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000048
+ALU: a=00000010, b=0000000c, result=0000001c, zero=0
+Next PC = 0000001c
+ ±º‰=295000: PC=00000018, ÷∏¡Ó=00831024, ALU=00000000
+ ±º‰=300000: PC=0000001c, ÷∏¡Ó=00831024, ALU=00000000
 
 ==== ÷‹∆⁄ 29 ====
-PC = 00000048, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
+PC = 0000001c, ÷∏¡Ó = 00831024
+øÿ÷∆–≈∫≈: opcode=000000, funct=100100
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
 alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+R–Õ÷∏¡Ó:       AND
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 0000004c
+ALU: a=00000010, b=0000000c, result=00000000, zero=1
+Next PC = 00000020
+ ±º‰=305000: PC=0000001c, ÷∏¡Ó=0083102a, ALU=00000000
+ ±º‰=310000: PC=00000020, ÷∏¡Ó=0083102a, ALU=00000000
 
 ==== ÷‹∆⁄ 30 ====
-PC = 0000004c, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000020, ÷∏¡Ó = 0083102a
+øÿ÷∆–≈∫≈: opcode=000000, funct=101010
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0111, branch=0, jump=0
+R–Õ÷∏¡Ó:       SLT
 ºƒ¥Ê∆˜±‰ªØ:
+  r2: 0000001c -> 00000000
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000050
+ALU: a=00000010, b=0000000c, result=00000000, zero=1
+Next PC = 00000024
+ ±º‰=315000: PC=00000020, ÷∏¡Ó=10630001, ALU=00000000
+ ±º‰=320000: PC=00000028, ÷∏¡Ó=10630001, ALU=00000000
 
 ==== ÷‹∆⁄ 31 ====
-PC = 00000050, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
+PC = 00000028, ÷∏¡Ó = 10630001
+øÿ÷∆–≈∫≈: opcode=000100, funct=000001
 reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+alu_control=0110, branch=1, jump=0
+÷∏¡Ó: BEQ r3, r3, 1
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000054
+ALU: a=0000000c, b=0000000c, result=00000000, zero=1
+Next PC = 00000030
+ ±º‰=325000: PC=00000028, ÷∏¡Ó=10640001, ALU=fffffffc
+ ±º‰=330000: PC=00000030, ÷∏¡Ó=10640001, ALU=fffffffc
 
 ==== ÷‹∆⁄ 32 ====
-PC = 00000054, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
+PC = 00000030, ÷∏¡Ó = 10640001
+øÿ÷∆–≈∫≈: opcode=000100, funct=000001
 reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+alu_control=0110, branch=1, jump=0
+÷∏¡Ó: BEQ r3, r4, 1
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000058
+ALU: a=0000000c, b=00000010, result=fffffffc, zero=0
+Next PC = 00000038
+ ±º‰=335000: PC=00000030, ÷∏¡Ó=08000000, ALU=00000000
+ ±º‰=340000: PC=00000000, ÷∏¡Ó=08000000, ALU=00000000
 
 ==== ÷‹∆⁄ 33 ====
-PC = 00000058, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
+PC = 00000000, ÷∏¡Ó = 08000000
+øÿ÷∆–≈∫≈: opcode=000010, funct=000000
 reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+alu_control=0000, branch=0, jump=1
+÷∏¡Ó: J 00000000
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 0000005c
+ALU: a=00000000, b=00000000, result=00000000, zero=1
+Next PC = 00000000
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 0, ÷µ=00000000
+ ±º‰=345000: PC=00000000, ÷∏¡Ó=00000000, ALU=00000000
+ ±º‰=350000: PC=00000004, ÷∏¡Ó=00000000, ALU=00000000
 
 ==== ÷‹∆⁄ 34 ====
-PC = 0000005c, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
+PC = 00000004, ÷∏¡Ó = 00000000
+øÿ÷∆–≈∫≈: opcode=000000, funct=000000
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
 alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+R–Õ÷∏¡Ó:   Œ¥÷™R–Õ
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000060
+ALU: a=00000000, b=00000000, result=00000000, zero=1
+Next PC = 00000008
+ ±º‰=355000: PC=00000004, ÷∏¡Ó=00432020, ALU=0000000c
+ ±º‰=360000: PC=00000008, ÷∏¡Ó=00432020, ALU=0000000c
 
 ==== ÷‹∆⁄ 35 ====
-PC = 00000060, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000008, ÷∏¡Ó = 00432020
+øÿ÷∆–≈∫≈: opcode=000000, funct=100000
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0010, branch=0, jump=0
+R–Õ÷∏¡Ó:       ADD
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000064
+ALU: a=00000000, b=0000000c, result=0000000c, zero=0
+Next PC = 0000000c
+ ±º‰=365000: PC=00000008, ÷∏¡Ó=8c440004, ALU=00000004
+ ±º‰=370000: PC=0000000c, ÷∏¡Ó=8c440004, ALU=00000004
 
 ==== ÷‹∆⁄ 36 ====
-PC = 00000064, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 0000000c, ÷∏¡Ó = 8c440004
+øÿ÷∆–≈∫≈: opcode=100011, funct=000100
+reg_dst=00, alu_src=1, mem_to_reg=01, reg_write=1, mem_write=0
+alu_control=0010, branch=0, jump=0
+÷∏¡Ó: LW r4, 4(r2)
 ºƒ¥Ê∆˜±‰ªØ:
+  r4: 00000010 -> 00000004
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000068
+ALU: a=00000000, b=00000004, result=00000004, zero=0
+Next PC = 00000010
+ ±º‰=375000: PC=0000000c, ÷∏¡Ó=ac450008, ALU=00000008
+ ±º‰=380000: PC=00000010, ÷∏¡Ó=ac450008, ALU=00000008
 
 ==== ÷‹∆⁄ 37 ====
-PC = 00000068, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000010, ÷∏¡Ó = ac450008
+øÿ÷∆–≈∫≈: opcode=101011, funct=001000
+reg_dst=00, alu_src=1, mem_to_reg=00, reg_write=0, mem_write=1
+alu_control=0010, branch=0, jump=0
+÷∏¡Ó: SW r5, 8(r2)
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 0000006c
+ALU: a=00000000, b=00000008, result=00000008, zero=0
+Next PC = 00000014
+ºƒ¥Ê∆˜–¥»Î πƒ‹º§ªÓ: –¥»Îr 2, ÷µ=00000008
+ ±º‰=385000: PC=00000010, ÷∏¡Ó=00831022, ALU=fffffff8
+ ±º‰=390000: PC=00000014, ÷∏¡Ó=00831022, ALU=fffffff8
 
 ==== ÷‹∆⁄ 38 ====
-PC = 0000006c, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000014, ÷∏¡Ó = 00831022
+øÿ÷∆–≈∫≈: opcode=000000, funct=100010
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0110, branch=0, jump=0
+R–Õ÷∏¡Ó:       SUB
 ºƒ¥Ê∆˜±‰ªØ:
+  r2: 00000000 -> fffffff8
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000070
+ALU: a=00000004, b=0000000c, result=fffffff8, zero=0
+Next PC = 00000018
+ ±º‰=395000: PC=00000014, ÷∏¡Ó=00831025, ALU=0000000c
+ ±º‰=400000: PC=00000018, ÷∏¡Ó=00831025, ALU=0000000c
 
 ==== ÷‹∆⁄ 39 ====
-PC = 00000070, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000018, ÷∏¡Ó = 00831025
+øÿ÷∆–≈∫≈: opcode=000000, funct=100101
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0001, branch=0, jump=0
+R–Õ÷∏¡Ó:        OR
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000074
+ALU: a=00000004, b=0000000c, result=0000000c, zero=0
+Next PC = 0000001c
+ ±º‰=405000: PC=00000018, ÷∏¡Ó=00831024, ALU=00000004
+ ±º‰=410000: PC=0000001c, ÷∏¡Ó=00831024, ALU=00000004
 
 ==== ÷‹∆⁄ 40 ====
-PC = 00000074, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
+PC = 0000001c, ÷∏¡Ó = 00831024
+øÿ÷∆–≈∫≈: opcode=000000, funct=100100
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
 alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+R–Õ÷∏¡Ó:       AND
 ºƒ¥Ê∆˜±‰ªØ:
+  r2: fffffff8 -> 00000004
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000078
+ALU: a=00000004, b=0000000c, result=00000004, zero=0
+Next PC = 00000020
+ ±º‰=415000: PC=0000001c, ÷∏¡Ó=0083102a, ALU=00000001
+ ±º‰=420000: PC=00000020, ÷∏¡Ó=0083102a, ALU=00000001
 
 ==== ÷‹∆⁄ 41 ====
-PC = 00000078, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
+PC = 00000020, ÷∏¡Ó = 0083102a
+øÿ÷∆–≈∫≈: opcode=000000, funct=101010
+reg_dst=01, alu_src=0, mem_to_reg=00, reg_write=1, mem_write=0
+alu_control=0111, branch=0, jump=0
+R–Õ÷∏¡Ó:       SLT
 ºƒ¥Ê∆˜±‰ªØ:
 ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 0000007c
+ALU: a=00000004, b=0000000c, result=00000001, zero=0
+Next PC = 00000024
+ ±º‰=425000: PC=00000020, ÷∏¡Ó=10630001, ALU=00000000
+ ±º‰=430000: PC=00000028, ÷∏¡Ó=10630001, ALU=00000000
 
 ==== ÷‹∆⁄ 42 ====
-PC = 0000007c, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
-ºƒ¥Ê∆˜±‰ªØ:
-ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000080
-
-==== ÷‹∆⁄ 43 ====
-PC = 00000080, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
-ºƒ¥Ê∆˜±‰ªØ:
-ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000084
-
-==== ÷‹∆⁄ 44 ====
-PC = 00000084, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
-ºƒ¥Ê∆˜±‰ªØ:
-ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxxxxx, zero=x
-Next PC = 00000088
-
-==== ÷‹∆⁄ 45 ====
-PC = 00000088, ÷∏¡Ó = xxxxxxxx
-øÿ÷∆–≈∫≈: opcode=xxxxxx, funct=xxxxxx
-reg_dst=00, alu_src=0, mem_to_reg=00, reg_write=0, mem_write=0
-alu_control=0000, branch=0, jump=0
-∆‰À˚÷∏¡Ó¿‡–Õ
-ºƒ¥Ê∆˜±‰ªØ:
-ƒ⁄¥Ê±‰ªØ:
-ALU: a=xxxxxxxx, b=xxxxxxxx, result=xxxxx
+PC = 00000028, ÷

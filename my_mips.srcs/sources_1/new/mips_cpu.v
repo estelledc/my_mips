@@ -29,7 +29,7 @@ module mips_cpu(
     
     // Ö¸Áî´æ´¢Æ÷ (ÉÏÉıÑØ¶ÁÈ¡)
     instruction_memory imem(
-        .clk(clk_rise),
+        .clk(clk),
         .addr(pc[7:2]),
         .instruction(instruction)
     );
