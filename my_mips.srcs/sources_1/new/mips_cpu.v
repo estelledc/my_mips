@@ -3,7 +3,7 @@ module mips_cpu(
     input reset
 );
 
-    // ÄÚ²¿ÐÅºÅ¶¨Òå
+    // ï¿½Ú²ï¿½ï¿½ÅºÅ¶ï¿½ï¿½ï¿½
     wire [31:0] pc, next_pc, instruction;
     wire [31:0] reg_data1, reg_data2, alu_result, mem_read_data;
     wire [31:0] sign_extend, zero_extend;
@@ -14,12 +14,12 @@ module mips_cpu(
     wire [1:0] reg_dst, mem_to_reg;
     wire alu_src, branch, jump, zero;
     
-    // Ê±ÖÓ±ßÑØ¿ØÖÆ
-    reg clk_rise = 0, clk_fall = 0;  // Ìí¼Ó³õÊ¼Öµ
+    // Ê±ï¿½Ó±ï¿½ï¿½Ø¿ï¿½ï¿½ï¿½
+    reg clk_rise = 0, clk_fall = 0;  // ï¿½ï¿½ï¿½Ó³ï¿½Ê¼Öµ
     always @(posedge clk) clk_rise <= ~clk_rise;
     always @(negedge clk) clk_fall <= ~clk_fall;
     
-    // PC¼Ä´æÆ÷ (ÏÂ½µÑØ¸üÐÂ)
+    // PCï¿½Ä´ï¿½ï¿½ï¿½ (ï¿½Â½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½)
     reg [31:0] pc_reg;
     always @(negedge clk or posedge reset) begin
         if (reset) pc_reg <= 32'b0;
@@ -27,16 +27,16 @@ module mips_cpu(
     end
     assign pc = pc_reg;
     
-    // Ö¸Áî´æ´¢Æ÷ (ÉÏÉýÑØ¶ÁÈ¡)
+    // Ö¸ï¿½ï¿½æ´¢ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½È¡)
     instruction_memory imem(
         .clk(clk),
         .addr(pc[7:2]),
         .instruction(instruction)
     );
     
-    // ¼Ä´æÆ÷ÎÄ¼þ
+    // ï¿½Ä´ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
     reg_file registers(
-        .clk(clk_fall),
+        .clk(clk),
         .reset(reset),
         .read_reg1(instruction[25:21]),
         .read_reg2(instruction[20:16]),
@@ -47,7 +47,7 @@ module mips_cpu(
         .read_data2(reg_data2)
     );
     
-    // ¿ØÖÆµ¥Ôª
+    // ï¿½ï¿½ï¿½Æµï¿½Ôª
     control_unit control(
         .opcode(instruction[31:26]),
         .funct(instruction[5:0]),
@@ -70,19 +70,19 @@ module mips_cpu(
         .zero(zero)
     );
     
-    // ·ûºÅÀ©Õ¹
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹
     sign_extend sign_ext(
         .in(instruction[15:0]),
         .out(sign_extend)
     );
     
-    // ÁãÀ©Õ¹
+    // ï¿½ï¿½ï¿½ï¿½Õ¹
     zero_extend zero_ext(
         .in(instruction[15:0]),
         .out(zero_extend)
     );
     
-    // Êý¾Ý´æ´¢Æ÷ (ÏÂ½µÑØÐ´Èë)
+    // ï¿½ï¿½ï¿½Ý´æ´¢ï¿½ï¿½ (ï¿½Â½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½)
     data_memory dmem(
         .clk(clk_fall),
         .reset(reset),
@@ -92,7 +92,7 @@ module mips_cpu(
         .read_data(mem_read_data)
     );
     
-    // ÏÂÒ»ÌõPC¼ÆËã
+    // ï¿½ï¿½Ò»ï¿½ï¿½PCï¿½ï¿½ï¿½ï¿½
     pc_calculator pc_calc(
         .pc(pc),
         .jump_addr(instruction[25:0]),
@@ -101,19 +101,19 @@ module mips_cpu(
         .jump(jump),
         .zero(zero),
         .reg_data1(reg_data1),
-        .funct(instruction[5:0]),    // Ìí¼Ó: ´«µÝfunct×Ö¶Î
-        .opcode(instruction[31:26]), // Ìí¼Ó: ´«µÝopcode×Ö¶Î
+        .funct(instruction[5:0]),    // ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½functï¿½Ö¶ï¿½
+        .opcode(instruction[31:26]), // ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½opcodeï¿½Ö¶ï¿½
         .next_pc(next_pc)
     );
     
-    // Ð´»Ø¼Ä´æÆ÷Ñ¡Ôñ
+    // Ð´ï¿½Ø¼Ä´ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
     assign write_reg = (reg_dst == 2'b00) ? instruction[20:16] :
                       (reg_dst == 2'b01) ? instruction[15:11] :
-                      5'b11111; // ÓÃÓÚJALÖ¸Áî
+                      5'b11111; // ï¿½ï¿½ï¿½ï¿½JALÖ¸ï¿½ï¿½
     
-    // Ð´»ØÊý¾ÝÑ¡Ôñ
+    // Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
     assign reg_write_data = (mem_to_reg == 2'b00) ? alu_result :
                            (mem_to_reg == 2'b01) ? mem_read_data :
                            (mem_to_reg == 2'b10) ? {pc + 32'd4} :
-                           zero_extend; // ÓÃÓÚLUIÖ¸Áî
+                           zero_extend; // ï¿½ï¿½ï¿½ï¿½LUIÖ¸ï¿½ï¿½
 endmodule

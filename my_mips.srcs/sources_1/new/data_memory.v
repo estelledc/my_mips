@@ -10,15 +10,15 @@ module data_memory(
     reg [31:0] mem [0:63];
     integer i;
     
-    // ³õÊ¼»¯Êý¾Ý´æ´¢Æ÷
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ý´æ´¢ï¿½ï¿½
     initial begin
         for (i = 0; i < 64; i = i + 1) begin
             mem[i] = i * 4;
         end
     end
     
-    // ½ö´¦ÀíÐ´Èë²Ù×÷ - ±£³ÖÔÚÏÂ½µÑØ
-    always @(negedge clk) begin
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½
+    always @(posedge clk) begin
         if (reset) begin
             for (i = 0; i < 64; i = i + 1) begin
                 mem[i] <= i * 4;
@@ -29,7 +29,7 @@ module data_memory(
         end
     end
     
-    // ´¿×éºÏÂß¼­¶ÁÈ¡ - Á¢¼´ÏìÓ¦µØÖ·±ä»¯
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½È¡ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ö·ï¿½ä»¯
     always @(*) begin
         read_data = mem[addr];
     end

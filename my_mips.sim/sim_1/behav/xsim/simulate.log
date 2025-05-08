@@ -101,4 +101,5 @@ Time=495000: PC=00000010, Inst=00831022
 Time=500000: PC=00000014, Inst=00831022
 Time=505000: PC=00000014, Inst=00831025
 Time=510000: PC=00000018, Inst=00831025
-Time=515000: PC=00000018, Inst=
+Time=515000: PC=00000018, Inst=00831024
+$finish called at time : 520 ns : File "E:/Xilinx/myprojects/my_mips/my_mips.srcs/sim_1/new/testbench.v" Line 34

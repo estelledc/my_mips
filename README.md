@@ -584,11 +584,7 @@ endmodule
 ```
  ![](https://raw.githubusercontent.com/estelledc/photos/master/2025-05-08_17-25-29.png)
 
-！当在同一个时钟下降沿，以下事件同时发生：
-1. 寄存器文件尝试写入mem_read_data
-2. 此时mem_read_data虽然是组合逻辑输出，但在实际仿真或硬件中，存在信号传播延迟
-因此`$4`并没有变为存储器中地址为`0x0000000c`的值`0x0000000c`
-
+![](https://raw.githubusercontent.com/estelledc/photos/master/2025-05-08_23-43-40.png)
 ##### sw $5,8($2)
  - ​**​语法​**​：`sw rt, offset(base)`
     - ​**​`rt`​**​：源寄存器（此处是 `$5`），存储待写入内存的数据。

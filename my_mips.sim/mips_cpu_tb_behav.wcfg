@@ -12,12 +12,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="67780878fs"></ZoomEndTime>
-      <Cursor1Time time="47352000fs"></Cursor1Time>
+      <ZoomEndTime time="69563165fs"></ZoomEndTime>
+      <Cursor1Time time="57951000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="111"></ValueColumnWidth>
+      <ValueColumnWidth column_width="107"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="27" />
    <wvobject fp_name="/mips_cpu_tb/clk" type="logic">
@@ -35,6 +35,11 @@
    <wvobject fp_name="/mips_cpu_tb/cpu/next_pc" type="array">
       <obj_property name="ElementShortName">next_pc[31:0]</obj_property>
       <obj_property name="ObjectShortName">next_pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_cpu_tb/cpu/registers/registers" type="array">
+      <obj_property name="ElementShortName">registers[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">registers[0:31][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/mips_cpu_tb/cpu/instruction" type="array">
       <obj_property name="ElementShortName">instruction[31:0]</obj_property>
@@ -119,11 +124,6 @@
    <wvobject fp_name="/mips_cpu_tb/cpu/pc_reg" type="array">
       <obj_property name="ElementShortName">pc_reg[31:0]</obj_property>
       <obj_property name="ObjectShortName">pc_reg[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mips_cpu_tb/cpu/registers/registers" type="array">
-      <obj_property name="ElementShortName">registers[0:31][31:0]</obj_property>
-      <obj_property name="ObjectShortName">registers[0:31][31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/mips_cpu_tb/cpu/dmem/mem" type="array">
       <obj_property name="ElementShortName">mem[0:63][31:0]</obj_property>
