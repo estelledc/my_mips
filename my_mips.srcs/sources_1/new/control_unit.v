@@ -28,7 +28,7 @@ module control_unit(
                     6'b100100: alu_control = 4'b0000; // AND
                     6'b100101: alu_control = 4'b0001; // OR
                     6'b101010: alu_control = 4'b0111; // SLT
-                    6'b001000: begin alu_control = 4'b0000; jump = 1'b1; end // JR
+                    6'b001000: begin alu_control = 4'b0000; jump = 1'b1; reg_write = 1'b0; end // JR
                     default: alu_control = 4'b0000;
                 endcase
             end

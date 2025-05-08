@@ -101,6 +101,8 @@ module mips_cpu(
         .jump(jump),
         .zero(zero),
         .reg_data1(reg_data1),
+        .funct(instruction[5:0]),    // Ìí¼Ó: ´«µÝfunct×Ö¶Î
+        .opcode(instruction[31:26]), // Ìí¼Ó: ´«µÝopcode×Ö¶Î
         .next_pc(next_pc)
     );
     
