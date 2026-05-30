@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN" data-system="tech-utility">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>my_mips · 单周期 MIPS 微处理器</title>
+  <meta name="description" content="MIPS CPU 课程实验：模块设计 + Verilog 代码 + ROM 汇编 + 仿真验证" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <span class="brand">MY_MIPS</span>
+      <a class="return-to-hub" href="https://estelledc.github.io/" rel="home">← estelledc.github.io</a>
+    </header>
+
+    <main>
+      <h1>单周期 MIPS 微处理器</h1>
+      <p class="lead">华中科大 EIC 数字逻辑课程实验：8 模块 Verilog 设计 + ROM 汇编 + Vivado 仿真。</p>
+
+      <ul class="tag-list">
+        <li>Verilog</li>
+        <li>Vivado</li>
+        <li>MIPS</li>
+        <li>课程实验</li>
+      </ul>
+
+      <h2 id="overview">CPU 总览</h2>
+      <p>单周期实现，每条指令 1 个 clock 完成 fetch / decode / execute / mem / writeback 全流程。数据通路连接 8 个模块。</p>
+
+      <h2 id="modules">模块详解</h2>
+
+      <h3>PC（程序计数器）</h3>
+      <pre><code>module pc(
+    input clk, rst,
+    input [31:0] next_pc,
+    output reg [31:0] pc_out
+);
+    always @(posedge clk or posedge rst) begin
+        if (rst) pc_out &lt;= 32'h0;
+        else pc_out &lt;= next_pc;
+    end
+endmodule</code></pre>
+
+      <h3>IM（指令存储器） · DM（数据存储器）</h3>
+      <p>IM 只读，存放 ROM 程序；DM 读写，按字节寻址 + 字对齐写入。</p>
+
+      <h3>RegFile（寄存器堆）</h3>
+      <p>32 × 32-bit 寄存器，双读端口 + 单写端口；$0 永远 0。</p>
+
+      <h3>ALU</h3>
+      <p>支持 ADD / SUB / AND / OR / XOR / SLT / SLL / SRL / SRA 9 种操作，由 4 位 op 码选择。</p>
+
+      <h3>Control · SignExt · PCCalc</h3>
+      <p>Control 译码 opcode/funct 产生控制信号；SignExt 16→32 位符号扩展；PCCalc 计算 PC+4 / branch / jump 地址。</p>
+
+      <h2 id="rom">指令集与 ROM 程序</h2>
+      <p>支持的指令：lw / sw / add / sub / and / or / beq / j / jal / addi / sll。ROM 程序用 .coe 文件初始化，跑斐波那契数列前 10 项。</p>
+
+      <h2 id="simulation">仿真验证</h2>
+      <p>每个模块单独写 testbench；整体集成测试观察 PC、RegFile、DM 的波形变化。</p>
+
+      <div class="callout">
+        <strong>踩坑</strong> · 单周期下分支必须在 ID 阶段决定，否则 PC 会取错指令；本实现把 branch 判定放在 ALU 输出端用组合逻辑提前回写 next_pc。
+      </div>
+
+      <h2 id="reflection">实验心得</h2>
+      <p>最大收获是搞清楚"指令周期"与"时钟周期"的关系，以及为什么单周期 CPU 的频率被最长路径限制（lw 要走 IM → RegFile → ALU → DM → RegFile，是关键路径）。</p>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        2026 · Jason Xun ·
+        <a href="https://github.com/estelledc/my_mips" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
