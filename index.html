@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>my_mips · 单周期 MIPS 微处理器</title>
   <meta name="description" content="MIPS CPU 课程实验：模块设计 + Verilog 代码 + ROM 汇编 + 仿真验证" />
+  <link rel="stylesheet" href="assets/jx/tokens.css">
+  <link rel="stylesheet" href="assets/jx/base.css">
+  <link rel="stylesheet" href="assets/jx/components.css">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+  <div style="position: fixed; top: 16px; left: 24px; z-index: 100;">
+    <a class="jx-return-to-hub" href="https://estelledc.github.io/">回 Jason 主站</a>
+  </div>
   <div class="shell">
     <header class="topbar">
       <span class="brand">MY_MIPS</span>
@@ -68,11 +74,16 @@ endmodule</code></pre>
       <p>最大收获是搞清楚"指令周期"与"时钟周期"的关系，以及为什么单周期 CPU 的频率被最长路径限制（lw 要走 IM → RegFile → ALU → DM → RegFile，是关键路径）。</p>
     </main>
 
-    <footer class="site-footer">
-      <p>
-        2026 · Jason Xun ·
-        <a href="https://github.com/estelledc/my_mips" target="_blank" rel="noopener">GitHub</a>
-      </p>
+    <footer class="jx-footer">
+      <div class="jx-footer__colophon">
+        <strong>my_mips</strong>
+        <span lang="en">CPU LAB · MMXXVI</span>
+      </div>
+      <nav class="jx-footer__index">
+        <a href="https://estelledc.github.io/">回 hub</a>
+        <a href="https://github.com/estelledc/my_mips">github</a>
+      </nav>
+      <time class="jx-footer__stamp" datetime="2026-05-31" lang="en">2026·05·31</time>
     </footer>
   </div>
 </body>
